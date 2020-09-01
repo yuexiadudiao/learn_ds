@@ -133,6 +133,9 @@ int main()
     heap_insert(myheap, 8);
     heap_print(myheap);
 
+    heap_insert(myheap, 5);
+    heap_print(myheap);
+
     int tmp;
     heap_delete(myheap, 2);
     heap_print(myheap);
