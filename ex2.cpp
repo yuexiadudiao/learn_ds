@@ -9,14 +9,21 @@
 #include<memory.h>
 #include<iostream>
 
-#define CHARACTER_NUM 26;
+#define CHARACTER_NUM 26
 
 typedef struct TrieTreeNode{
     char ch;
     struct TrieTreeNode *subtree[26];
 }TrieTreeNode, *pTrieTreeNode;
 
+/* 插入一个单词 */
 void TrieTree_AddWord(char str[])
+{
+
+}
+
+/* 查找一个单词 */
+void TrieTree_FindWord(char str[])
 {
 
 }
@@ -37,7 +44,18 @@ void TrieTree_Create(pTrieTreeNode* ppNode)
 /* 删除一颗trie树 */
 void TrieTree_Delete(pTrieTreeNode pTree)
 {
+    if(NULL == pTree)
+        return ;
 
+    for(int i=0 ; i < CHARACTER_NUM ; i++)
+    {
+        if(NULL != pTree->subtree[i])
+        {
+            TrieTree_Delete(pTree->subtree[i]);
+        }        
+    }
+
+    free(pTree);
 }
 
 int main()
@@ -45,7 +63,7 @@ int main()
     pTrieTreeNode mytree = NULL;
     TrieTree_Create(&mytree);
 
-    std::cout<<"ee"<<std::endl;
+    
 
     return 0;
 }
