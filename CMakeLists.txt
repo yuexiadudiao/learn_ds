@@ -1,5 +1,7 @@
 project(learn_ds)
 cmake_minimum_required(VERSION 2.8)
 
-add_executable(ex1 ex1.c)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c99")
+
+add_executable(ex1 ex1.cpp)
 add_executable(ex2 ex2.cpp)
